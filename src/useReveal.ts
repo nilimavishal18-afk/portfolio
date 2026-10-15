@@ -1,9 +1,9 @@
 import { useEffect } from 'react'
 
-/** Fades in every `.reveal` element as it scrolls into view. */
-export function useReveal() {
+/** Fades in every `.reveal` element as it scrolls into view. Re-runs when `key` changes. */
+export function useReveal(key: string) {
   useEffect(() => {
-    const els = document.querySelectorAll<HTMLElement>('.reveal')
+    const els = document.querySelectorAll<HTMLElement>('.reveal:not(.is-visible)')
     if (!('IntersectionObserver' in window)) {
       els.forEach((el) => el.classList.add('is-visible'))
       return
@@ -17,9 +17,9 @@ export function useReveal() {
           }
         })
       },
-      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' },
+      { threshold: 0.08, rootMargin: '0px 0px -40px 0px' },
     )
     els.forEach((el) => io.observe(el))
     return () => io.disconnect()
-  }, [])
+  }, [key])
 }
