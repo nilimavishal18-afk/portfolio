@@ -171,8 +171,19 @@ function Home() {
             <a key={c.slug} href={`#/work/${c.slug}`} className="case reveal" style={accentStyle(c.accent)}>
               <div className="case__art" aria-hidden>
                 <span className="case__index">{String(i + 1).padStart(2, '0')}</span>
-                <div className="case__shape" />
-                <div className="case__shape case__shape--2" />
+                {c.device === 'mobile' ? (
+                  <div className="case__phone">
+                    <span className="case__phone-bar" />
+                    <span className="case__phone-card" />
+                    <span className="case__phone-card case__phone-card--short" />
+                    <span className="case__phone-card" />
+                  </div>
+                ) : (
+                  <>
+                    <div className="case__shape" />
+                    <div className="case__shape case__shape--2" />
+                  </>
+                )}
               </div>
               <div className="case__body">
                 <div className="case__meta">

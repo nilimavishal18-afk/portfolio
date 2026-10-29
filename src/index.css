@@ -511,6 +511,45 @@ h2 em {
   transform: translate(-16px, -12px);
 }
 
+.case__phone {
+  position: absolute;
+  left: 50%;
+  bottom: -40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 170px;
+  height: 300px;
+  padding: 22px 14px;
+  border-radius: 32px;
+  border: 6px solid color-mix(in srgb, var(--text) 85%, transparent);
+  background: var(--bg-elev);
+  transform: translateX(-50%) rotate(-6deg);
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.case:hover .case__phone {
+  transform: translateX(-50%) rotate(0deg) translateY(-10px);
+}
+
+.case__phone-bar {
+  width: 50%;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--accent);
+}
+
+.case__phone-card {
+  height: 48px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--accent) 22%, var(--bg-elev));
+}
+
+.case__phone-card--short {
+  height: 28px;
+  width: 70%;
+}
+
 .case__body {
   display: flex;
   flex-direction: column;

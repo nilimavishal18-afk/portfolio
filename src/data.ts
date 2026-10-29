@@ -19,6 +19,8 @@ export interface CaseStudy {
   team: string
   domain: string
   accent: string
+  /** Card illustration variant; defaults to abstract shapes. */
+  device?: 'mobile'
   highlight?: string
   nda?: boolean
   context: string
@@ -95,6 +97,36 @@ export const caseStudies: CaseStudy[] = [
       'Established the UX foundation for Blue Yonder’s agent platform',
       'Data visualization standards adopted across products',
     ],
+  },
+  {
+    slug: 'orchestrator-mobile',
+    title: 'Orchestrator Mobile App',
+    summary: 'Bringing supply chain orchestration to mobile so teams can monitor and act from anywhere.',
+    company: 'Blue Yonder',
+    year: '2024 — 2026',
+    role: 'Sr. UX Designer — design owner',
+    team: 'Product, Engineering, User Research',
+    domain: 'Supply chain · Mobile · Workflow automation',
+    accent: '#f2a541',
+    device: 'mobile',
+    nda: true,
+    context:
+      'Orchestrator coordinates multi-step supply chain processes. Many of the people responsible for those processes are away from their desks, on the floor or on the move, and still need to know what is happening.',
+    problem:
+      'Orchestration was designed for large screens. Users needed a focused mobile experience to stay on top of workflows and respond quickly without a desktop.',
+    responsibilities: [
+      'Owned UX for the Orchestrator mobile experience',
+      'Defined which desktop capabilities matter most on mobile, with product and research',
+      'Designed flows, interaction models, prototypes and high-fidelity screens',
+      'Contributed mobile-first guidelines and patterns to the Blue Yonder design system',
+    ],
+    approach: [
+      { title: 'Prioritise for mobile', text: 'Identified the moments users most need on the go, and focused the app on monitoring and quick actions.' },
+      { title: 'Rethink data for small screens', text: 'Adapted workflow status and data visualizations so they stay readable at a glance on a phone.' },
+      { title: 'Prototype & test', text: 'Validated flows with interactive prototypes and refined them through usability feedback.' },
+      { title: 'Systemise', text: 'Turned the solutions into reusable mobile-first patterns for other Blue Yonder products.' },
+    ],
+    outcomes: ['Mobile-first guidelines and patterns added to the Blue Yonder design system'],
   },
   {
     slug: 'telerad',
